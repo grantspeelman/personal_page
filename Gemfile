@@ -2,6 +2,10 @@
 source "https://rubygems.org"
 
 gem "sinatra"
-gem "shotgun"
 gem "heroku"
 gem 'thin'
+
+group :development do
+  gem 'shotgun'
+end
+
