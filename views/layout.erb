@@ -13,9 +13,10 @@
 
 
   <!-- Javascript -->
-  <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+  <script src="js/jquery-1.7.2.min.js"></script>
   <script src="bootstrap/js/bootstrap.min.js"></script>
 
+  <% if production? %>
   <script type="text/javascript">
 
     var _gaq = _gaq || [];
@@ -30,6 +31,7 @@
     })();
 
   </script>
+  <% end %>
 </head>
 
 <body>
@@ -52,9 +54,13 @@
       <div class="nav-collapse">
         <div class="navbar">
           <ul class="nav">
-            <li>
-              <a href="/">About Me</a>
-            </li>
+            <% ["About me","Powered by"].each do |nav_name| %>
+              <li>
+                <a href="<%= nav_name.downcase.gsub(/\s/,'_') %>"
+                   <%= 'class="active"' if true  %> >
+                  <%= nav_name %>
+                </a>
+            <% end %>
           </ul>
         </div>
       </div>

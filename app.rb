@@ -2,12 +2,9 @@ require "bundler/setup"
 require 'sinatra'
 
 get '/' do
-  erb :home
+  redirect to('/about_me')
 end
 
-get '/contact_me' do
-  erb :contact
-end
-get '/contact' do
-  erb :contact
+get '/:page' do
+  erb params[:page].to_sym
 end
