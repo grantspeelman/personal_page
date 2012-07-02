@@ -1,5 +1,5 @@
 require "bundler/setup"
-require 'sinatra'
+Bundler.require
 
 get '/' do
   redirect to('/about_me')

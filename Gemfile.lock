@@ -2,9 +2,24 @@ GEM
   remote: https://rubygems.org/
   specs:
     addressable (2.2.8)
+    ansi (1.4.3)
+    builder (3.0.0)
+    capybara (1.1.2)
+      mime-types (>= 1.16)
+      nokogiri (>= 1.3.3)
+      rack (>= 1.0.0)
+      rack-test (>= 0.5.4)
+      selenium-webdriver (~> 2.0)
+      xpath (~> 0.1.4)
+    capybara_minitest_spec (0.2.2)
+      capybara
+      minitest (>= 2.0)
+    childprocess (0.3.3)
+      ffi (~> 1.0.6)
     daemons (1.1.8)
     eventmachine (0.12.10)
     excon (0.14.2)
+    ffi (1.0.11)
     heroku (2.28.7)
       heroku-api (~> 0.2.6)
       launchy (>= 0.3.2)
@@ -15,14 +30,32 @@ GEM
       excon (~> 0.14.0)
     launchy (2.1.0)
       addressable (~> 2.2.6)
+    libwebsocket (0.1.3)
+      addressable
     mime-types (1.19)
+    minitest (3.2.0)
+    minitest-reporters (0.8.0)
+      ansi
+      builder
+      minitest (>= 2.0, < 4.0)
+      ruby-progressbar
+    multi_json (1.3.6)
     netrc (0.7.5)
+    nokogiri (1.5.5)
     rack (1.4.1)
     rack-protection (1.2.0)
       rack
+    rack-test (0.6.1)
+      rack (>= 1.0)
     rest-client (1.6.7)
       mime-types (>= 1.16)
+    ruby-progressbar (0.0.10)
     rubyzip (0.9.9)
+    selenium-webdriver (2.24.0)
+      childprocess (>= 0.2.5)
+      libwebsocket (~> 0.1.3)
+      multi_json (~> 1.0)
+      rubyzip
     shotgun (0.9)
       rack (>= 1.0)
     sinatra (1.3.2)
@@ -34,12 +67,18 @@ GEM
       eventmachine (>= 0.12.6)
       rack (>= 1.0.0)
     tilt (1.3.3)
+    xpath (0.1.4)
+      nokogiri (~> 1.3)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  capybara
+  capybara_minitest_spec
   heroku
+  minitest
+  minitest-reporters
   shotgun
   sinatra
   thin

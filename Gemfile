@@ -2,10 +2,17 @@
 source "https://rubygems.org"
 
 gem "sinatra"
-gem "heroku"
-gem 'thin'
+gem "heroku", :require => false
+gem 'thin', :require => false
 
 group :development do
-  gem 'shotgun'
+  gem 'shotgun', :require => false
+end
+
+group :test do
+  gem 'minitest'
+  gem 'minitest-reporters'
+  gem 'capybara'
+  gem 'capybara_minitest_spec'
 end
 
