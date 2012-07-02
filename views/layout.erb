@@ -55,9 +55,9 @@
         <div class="navbar">
           <ul class="nav">
             <% ["About me","Tweets","Powered by"].each do |nav_name| %>
-              <li>
-                <a href="<%= nav_name.downcase.gsub(/\s/,'_') %>"
-                   <%= 'class="active"' if true  %> >
+              <% nav_href = "/" + nav_name.downcase.gsub(/\s/,'_')  %>
+              <li <%= 'class="active"' if request.path_info == nav_href  %> >
+                <a href="<%= nav_href %>">
                   <%= nav_name %>
                 </a>
             <% end %>
