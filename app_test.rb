@@ -6,8 +6,6 @@ require 'minitest/autorun'
 require "capybara/dsl"
 require "capybara_minitest_spec"
 
-
-
 describe "pages" do
   include Capybara::DSL
   Capybara.app = Sinatra::Application
@@ -15,7 +13,7 @@ describe "pages" do
   def must_show_menu
     within('.navbar') do
       page.must_have_link('About me')
-      page.must_have_link("Gman Weekly")
+      page.must_have_link("Tweets")
       page.must_have_link("Powered by")
     end
   end
@@ -30,8 +28,8 @@ describe "pages" do
 
   it "must show the gman weekly page" do
     visit '/'
-    click_link 'Gman Weekly'
-    page.must_have_content("Gman Weekly")
+    click_link 'Tweets'
+    page.must_have_content("Tweets")
     must_show_menu
   end
 
