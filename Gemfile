@@ -1,18 +1,13 @@
-# A sample Gemfile
-source "https://rubygems.org"
+# If you do not have OpenSSL installed, change
+# the following line to use 'http://'
+source 'https://rubygems.org'
 
-gem "sinatra"
-gem "heroku", :require => false
-gem 'thin', :require => false
+# For faster file watcher updates on Windows:
+# gem 'wdm', '~> 0.1.0', platforms: [:mswin, :mingw]
 
-group :development do
-  gem 'shotgun', :require => false
-end
+# Windows does not come with time zone data
+# gem 'tzinfo-data', platforms: [:mswin, :mingw, :jruby]
 
-group :test do
-  gem 'minitest'
-  gem 'minitest-reporters'
-  gem 'capybara'
-  gem 'capybara_minitest_spec'
-end
-
+# Middleman Gems
+gem 'middleman', '>= 4.0.0'
+gem 'middleman-livereload'

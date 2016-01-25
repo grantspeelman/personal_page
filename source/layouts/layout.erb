@@ -7,16 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Global Stylesheets -->
-  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" media="all"/>
-  <link rel="stylesheet" href="bootstrap/css/bootstrap-responsive.min.css" media="all"/>
-  <link rel="stylesheet" href="css/style.css" media="all"/>
+  <%= stylesheet_link_tag :site %>
+  <%= javascript_include_tag :all %>
 
-
-  <!-- Javascript -->
-  <script src="js/jquery-1.7.2.min.js"></script>
-  <script src="bootstrap/js/bootstrap.min.js"></script>
-
-  <% if production? %>
   <script type="text/javascript">
 
     var _gaq = _gaq || [];
@@ -31,7 +24,6 @@
     })();
 
   </script>
-  <% end %>
 </head>
 
 <body>
@@ -54,13 +46,8 @@
       <div class="nav-collapse">
         <div class="navbar">
           <ul class="nav">
-            <% ["About me","Tweets","Powered by"].each do |nav_name| %>
-              <% nav_href = "/" + nav_name.downcase.gsub(/\s/,'_')  %>
-              <li <%= 'class="active"' if request.path_info == nav_href  %> >
-                <a href="<%= nav_href %>">
-                  <%= nav_name %>
-                </a>
-            <% end %>
+            <li><a href="/">About me</a></li>
+            <li><a href="/powered_by.html">Powered by</a></li>
           </ul>
         </div>
       </div>
