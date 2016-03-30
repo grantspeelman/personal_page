@@ -18,6 +18,9 @@ page '/*.txt', layout: false
 
 # General configuration
 
+redirect "about_me.html", to: "index.html"
+redirect "tweets.html", to: "index.html"
+
 # Reload the browser automatically whenever files change
 configure :development do
   activate :livereload
